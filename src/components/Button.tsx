@@ -1,0 +1,35 @@
+import React from 'react';
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  fullWidth?: boolean;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+}
+export const Button = ({
+  children,
+  variant = 'primary',
+  size = 'md',
+  fullWidth = false,
+  onClick,
+  type = 'button'
+}: ButtonProps) => {
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-400 rounded-xl';
+  const variantClasses = {
+    primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500/30',
+    secondary: 'bg-transparent border-2 border-primary-400 text-primary-500 hover:bg-primary-50/50 hover:border-primary-500 focus:ring-primary-400/30',
+    outline: 'bg-white border-2 border-primary-500 text-primary-600 hover:bg-primary-50 hover:border-primary-600 focus:ring-primary-500/30',
+    ghost: 'bg-transparent border-2 border-primary-500/30 text-primary-600 hover:bg-primary-50/30 hover:border-primary-500/70 focus:ring-primary-500/20'
+  };
+  const sizeClasses = {
+    sm: 'text-sm px-4 py-2 gap-2',
+    md: 'text-base px-6 py-2.5 gap-2.5',
+    lg: 'text-lg px-8 py-3 gap-3'
+  };
+  const widthClass = fullWidth ? 'w-full' : '';
+  const shadowClass = variant === 'ghost' || variant === 'secondary' ? '' : 'shadow-sm hover:shadow-md';
+  return <button type={type} className={`relative z-10 ${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${shadowClass} outline-none ring-primary-300 focus:ring-4 border-2 border-primary-400 hover:border-primary-600`} onClick={onClick}>
+      {children}
+    </button>;
+};
