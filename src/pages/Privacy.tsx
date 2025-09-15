@@ -1,7 +1,7 @@
-import React, { Children } from 'react';
-import { Footer } from '../components/Footer';
+import { Footer } from "../components/Footer";
 export const Privacy = () => {
-  return <div className="flex flex-col min-h-screen">
+  return (
+    <div className="flex flex-col min-h-screen">
       <main className="py-16 md:py-24 relative flex-grow overflow-hidden">
         {/* Background pattern - now using relative positioning */}
         <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
@@ -9,15 +9,24 @@ export const Privacy = () => {
         <div className="absolute -left-[300px] top-[10%] w-[1400px] h-[1400px] bg-gradient-to-tr from-cyan-500/15 via-primary-300/10 to-cyan-200/15 rounded-[50%_50%_45%_55%] blur-3xl -z-10" />
         {/* Background gradient blobs - contained within main content */}
         <div className="absolute top-0 right-1/3 w-[900px] h-[900px] bg-gradient-to-br from-cyan-400/10 via-teal-400/10 to-blue-400/10 rounded-[60%_40%_55%_45%] blur-3xl -z-10" />
-        <div className="absolute top-[30%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-purple-400/10 via-violet-400/10 to-fuchsia-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '2s'
-      }} />
-        <div className="absolute top-[60%] right-0 w-[750px] h-[750px] bg-gradient-to-bl from-amber-400/10 via-orange-400/10 to-red-400/10 rounded-[55%_45%_60%_40%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '1.5s'
-      }} />
-        <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-400/10 via-green-400/10 to-teal-400/10 rounded-[45%_55%_50%_50%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '3s'
-      }} />
+        <div
+          className="absolute top-[30%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-purple-400/10 via-violet-400/10 to-fuchsia-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "2s",
+          }}
+        />
+        <div
+          className="absolute top-[60%] right-0 w-[750px] h-[750px] bg-gradient-to-bl from-amber-400/10 via-orange-400/10 to-red-400/10 rounded-[55%_45%_60%_40%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "1.5s",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-400/10 via-green-400/10 to-teal-400/10 rounded-[45%_55%_50%_50%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "3s",
+          }}
+        />
         {/* Content container */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl font-serif font-normal text-cyan-900 mb-6 text-center">
@@ -77,7 +86,7 @@ export const Privacy = () => {
             <p className="mb-6 text-gray-700">
               <span className="font-semibold">
                 Personal Information We Collect Directly From You.
-              </span>{' '}
+              </span>{" "}
               While the personal information we collect varies depending upon
               your use of the Website, Services, and our interactions with you,
               in general, we collect the following personal information directly
@@ -89,14 +98,14 @@ export const Privacy = () => {
               and other contact information you choose to provide.
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-semibold">Employment Information.</span>{' '}
+              <span className="font-semibold">Employment Information.</span>{" "}
               When you contact us, we collect information regarding the school
               or organization with whom you are associated.
             </p>
             <p className="mb-2 text-gray-700">
               <span className="font-semibold">
                 Account Registration Information.
-              </span>{' '}
+              </span>{" "}
               When you register for an account in the Services, we collect
               information on you in order to set up such an accountsuch account.
               This may include your name, email address, phone number, school or
@@ -106,7 +115,7 @@ export const Privacy = () => {
             <p className="mb-2 text-gray-700">
               <span className="font-semibold">
                 Payment Information (if applicable).
-              </span>{' '}
+              </span>{" "}
               You may be required to provide financial and bank information
               prior to purchasing the Services. Please note, we do not store
               financial and bank information; such information is securely
@@ -117,7 +126,7 @@ export const Privacy = () => {
             <p className="mb-2 text-gray-700">
               <span className="font-semibold">
                 Communications and Interactions.
-              </span>{' '}
+              </span>{" "}
               When you send email, call, or otherwise communicate with us and
               with members of our team, we collect and maintain a record of your
               contact details, communications, and our responses.
@@ -130,7 +139,7 @@ export const Privacy = () => {
               any other information you so choose to provide.
             </p>
             <p className="mb-2 text-gray-700">
-              <span className="font-semibold">Marketing and Promotions.</span>{' '}
+              <span className="font-semibold">Marketing and Promotions.</span>{" "}
               We collect your email, name, phone number, preferences. If you
               participate in promotions we offer, we collect your name and other
               information related to the activities available through the
@@ -199,7 +208,7 @@ export const Privacy = () => {
             <p className="mb-6 text-gray-700">
               <strong>
                 Personal Information We Collect from Other Sources.
-              </strong>{' '}
+              </strong>{" "}
               In addition, we may collect and receive certain personal
               information from business partners, organizations, and public
               databases. As permitted by applicable law, we may combine this
@@ -241,7 +250,7 @@ export const Privacy = () => {
               services you may request from us.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>To Monitor and Maintain the Website and Services:</strong>{' '}
+              <strong>To Monitor and Maintain the Website and Services:</strong>{" "}
               To monitor system performance, diagnose issues, administer and
               troubleshoot the Website and Services, analyze trends and usage
               patterns, and generate statistics.
@@ -334,7 +343,7 @@ export const Privacy = () => {
             <p className="mb-2 text-gray-700">
               <strong>
                 Foundations, Schools, Teachers, and Others at your direction.
-              </strong>{' '}
+              </strong>{" "}
               We disclose the personal information we collect to foundations,
               schools, teachers, and other educational partners with your
               consent and at your direction.
@@ -380,7 +389,7 @@ export const Privacy = () => {
               property, or the rights, property, and safety of others.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Aggregate and Deidentified Information.</strong>{' '}
+              <strong>Aggregate and Deidentified Information.</strong>{" "}
               Notwithstanding anything else in this Privacy Policy, we may use,
               disclose, and otherwise process aggregate and deidentified
               information related to our business and the Website and Services
@@ -419,12 +428,18 @@ export const Privacy = () => {
               <strong>Google Analytics.</strong> We use Google Analytics on the
               Website to help us analyze traffic and improve services. For more
               information on Google Analytics' processing of personal
-              information, please see{' '}
-              <a href="https://www.google.com/policies/privacy/partners/" className="text-primary-600 hover:text-primary-800">
+              information, please see{" "}
+              <a
+                href="https://www.google.com/policies/privacy/partners/"
+                className="text-primary-600 hover:text-primary-800"
+              >
                 https://www.google.com/policies/privacy/partners/
               </a>
-              . You may opt out of the use of Google Analytics here:{' '}
-              <a href="https://tools.google.com/dlpage/gaoptout" className="text-primary-600 hover:text-primary-800">
+              . You may opt out of the use of Google Analytics here:{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                className="text-primary-600 hover:text-primary-800"
+              >
                 https://tools.google.com/dlpage/gaoptout
               </a>
               .
@@ -433,8 +448,11 @@ export const Privacy = () => {
               <strong>PostHog.</strong> We use PostHog Analytics on the Website
               and Services to help us analyze traffic and improve services. For
               more information on PostHog's processing of personal information,
-              please see{' '}
-              <a href="https://posthog.com/web-analytics" className="text-primary-600 hover:text-primary-800">
+              please see{" "}
+              <a
+                href="https://posthog.com/web-analytics"
+                className="text-primary-600 hover:text-primary-800"
+              >
                 https://posthog.com/web-analytics
               </a>
               .
@@ -563,8 +581,11 @@ export const Privacy = () => {
             </h3>
             <p className="mb-12 text-gray-700">
               If you have any questions about this Privacy Policy, please email
-              us at{' '}
-              <a href="mailto:privacy@nisa.coach" className="text-primary-600 hover:text-primary-800">
+              us at{" "}
+              <a
+                href="mailto:privacy@nisa.coach"
+                className="text-primary-600 hover:text-primary-800"
+              >
                 privacy@nisa.coach
               </a>
               .
@@ -573,5 +594,6 @@ export const Privacy = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };

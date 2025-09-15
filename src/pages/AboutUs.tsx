@@ -1,8 +1,16 @@
-import React, { memo } from 'react';
-import { Footer } from '../components/Footer';
-import { Feather, Heart, BookOpen, Brain, Handshake, Globe, Target, Building, Ear } from 'lucide-react';
+import { Footer } from "../components/Footer";
+import {
+  BookOpen,
+  Brain,
+  Handshake,
+  Globe,
+  Target,
+  Building,
+  Ear,
+} from "lucide-react";
 export const AboutUs = () => {
-  return <div className="flex flex-col min-h-screen">
+  return (
+    <div className="flex flex-col min-h-screen">
       <main className="relative flex-grow overflow-hidden">
         <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
         {/* XL Cyan gradient blob */}
@@ -17,16 +25,23 @@ export const AboutUs = () => {
                   About the Nisa Team
                 </h1>
                 <div className="md:w-auto flex justify-center">
-                  <img src="/Nisa_-_Plant_Arc_Growth.png" alt="Plant growth illustration" className="w-full max-w-[150px]" />
+                  <img
+                    src="/Nisa_-_Plant_Arc_Growth.png"
+                    alt="Plant growth illustration"
+                    className="w-full max-w-[150px]"
+                  />
                 </div>
               </div>
               <div className="prose prose-lg text-gray-600 max-w-none">
                 <p className="text-xl font-medium mb-6 text-center">
                   We believe great instruction is a right, not a privilege.
                 </p>
-                <p className="mb-6 text-lg pb-5 mx-auto" style={{
-                width: 'calc(80% + 40px)'
-              }}>
+                <p
+                  className="mb-6 text-lg pb-5 mx-auto"
+                  style={{
+                    width: "calc(80% + 40px)",
+                  }}
+                >
                   We're building tools that support the people who make that
                   possible every day: instructional coaches and the teachers
                   they partner with. Whether it's helping a coach prepare a
@@ -41,7 +56,11 @@ export const AboutUs = () => {
         </section>
         {/* Mission image moved here, above Why Nisa section */}
         <div className="mb-10 max-w-3xl mx-auto">
-          <img src="/image.png" alt="Our Mission: Reduce the mental overhead of coaching and teaching, so educators can focus on what matters most: great instruction and thriving classrooms." className="w-full rounded-lg shadow-sm" />
+          <img
+            src="/image.png"
+            alt="Our Mission: Reduce the mental overhead of coaching and teaching, so educators can focus on what matters most: great instruction and thriving classrooms."
+            className="w-full rounded-lg shadow-sm"
+          />
         </div>
         {/* Why Nisa section */}
         <section className="w-full py-section-mobile relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-blue-50/30">
@@ -195,7 +214,11 @@ export const AboutUs = () => {
               </div>
               <div className="bg-gradient-to-r from-cyan-100/25 to-teal-200/25 backdrop-blur-sm rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center">
                 <div className="md:w-auto flex-shrink-0">
-                  <img src="/Nisa_Duo_Orange.png" alt="Nisa team illustration" className="w-full max-w-[224px]" />
+                  <img
+                    src="/Nisa_Duo_Orange.png"
+                    alt="Nisa team illustration"
+                    className="w-full max-w-[224px]"
+                  />
                 </div>
                 <div className="md:flex-1">
                   <p className="text-gray-700 text-lg leading-relaxed">
@@ -213,5 +236,6 @@ export const AboutUs = () => {
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };

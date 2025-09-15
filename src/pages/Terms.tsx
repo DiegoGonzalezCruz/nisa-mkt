@@ -1,7 +1,7 @@
-import React from 'react';
-import { Footer } from '../components/Footer';
+import { Footer } from "../components/Footer";
 export const Terms = () => {
-  return <div className="flex flex-col min-h-screen">
+  return (
+    <div className="flex flex-col min-h-screen">
       <main className="py-section-mobile md:py-section-desktop relative flex-grow overflow-hidden">
         {/* Background pattern - now using relative positioning */}
         <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
@@ -9,15 +9,24 @@ export const Terms = () => {
         <div className="absolute right-0 bottom-[10%] w-[1300px] h-[1300px] bg-gradient-to-bl from-cyan-400/15 via-primary-300/10 to-teal-200/15 rounded-[55%_45%_50%_50%] blur-3xl -z-10" />
         {/* Background gradient blobs - contained within main content */}
         <div className="absolute top-0 left-1/4 w-[850px] h-[850px] bg-gradient-to-br from-blue-400/10 via-cyan-400/10 to-teal-400/10 rounded-[55%_45%_60%_40%] blur-3xl -z-10" />
-        <div className="absolute top-[25%] right-0 w-[750px] h-[750px] bg-gradient-to-tl from-purple-400/10 via-violet-400/10 to-indigo-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '1.5s'
-      }} />
-        <div className="absolute top-[50%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-amber-400/10 via-orange-400/10 to-yellow-400/10 rounded-[60%_40%_50%_50%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '3s'
-      }} />
-        <div className="absolute bottom-0 right-1/3 w-[700px] h-[700px] bg-gradient-to-bl from-emerald-400/10 via-green-400/10 to-lime-400/10 rounded-[45%_55%_40%_60%] blur-3xl -z-10 animate-float" style={{
-        animationDelay: '2s'
-      }} />
+        <div
+          className="absolute top-[25%] right-0 w-[750px] h-[750px] bg-gradient-to-tl from-purple-400/10 via-violet-400/10 to-indigo-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "1.5s",
+          }}
+        />
+        <div
+          className="absolute top-[50%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-amber-400/10 via-orange-400/10 to-yellow-400/10 rounded-[60%_40%_50%_50%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "3s",
+          }}
+        />
+        <div
+          className="absolute bottom-0 right-1/3 w-[700px] h-[700px] bg-gradient-to-bl from-emerald-400/10 via-green-400/10 to-lime-400/10 rounded-[45%_55%_40%_60%] blur-3xl -z-10 animate-float"
+          style={{
+            animationDelay: "2s",
+          }}
+        />
         {/* Content container */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl font-serif font-normal text-cyan-900 mb-6 text-center">
@@ -736,5 +745,6 @@ export const Terms = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
