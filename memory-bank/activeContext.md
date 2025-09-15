@@ -1,15 +1,16 @@
 # Active Context: Nisa Marketing Website
 
-## Current Focus: Pilot Application Form Submission
+## Current Focus: API Development
 
-The immediate goal is to implement the backend functionality for the "Join the Pilot" application form. This involves extracting the form submission logic from the frontend, creating a dedicated API endpoint to handle it, and ensuring the data is securely and reliably passed to the Nisa intake service.
+The current focus is on building out the API functionality for the marketing website. This includes handling form submissions and providing a health check endpoint for monitoring.
 
 ## Key Tasks:
 
-1.  **Create the API Endpoint:** Develop a serverless function at `api/pilot/submit` to process the form data.
-2.  **Adapt the Logic:** Convert the provided Next.js example code to a format compatible with a standard Node.js serverless environment.
-3.  **Integrate with Frontend:** Update the `JoinPilotModal.tsx` component to send the form data to the new API endpoint.
-4.  **Configure Local Development:** Set up a proxy in `vite.config.ts` to allow the frontend to communicate with the local serverless function.
+1.  **Create the API Endpoint:** Develop a serverless function at `api/pilot/submit` to process the form data. (Completed)
+2.  **Adapt the Logic:** Convert the provided Next.js example code to a format compatible with a standard Node.js serverless environment. (Completed)
+3.  **Integrate with Frontend:** Update the `JoinPilotModal.tsx` component to send the form data to the new API endpoint. (Completed)
+4.  **Configure Local Development:** Set up a proxy in `vite.config.ts` to allow the frontend to communicate with the local serverless function. (Completed)
+5.  **Create Health Check Endpoint:** Add a `/api/health` endpoint to confirm the API is operational. (Completed)
 
 ## Decisions and Considerations:
 
