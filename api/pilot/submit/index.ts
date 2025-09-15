@@ -4,6 +4,9 @@ import crypto from "crypto";
 const INTAKE_URL = process.env.NISA_APP_INTAKE_URL!;
 const S2S_SECRET = process.env.NISA_S2S_SECRET!;
 
+console.log("INTAKE_URL:", INTAKE_URL ? "set" : "MISSING");
+console.log("S2S_SECRET:", S2S_SECRET ? "set" : "MISSING");
+
 // Optional: small helper to email the applicant
 async function sendReceiptEmail({ to, name }: { to: string; name: string }) {
   const key = process.env.SENDGRID_API_KEY;
@@ -37,6 +40,7 @@ export default async function handler(req: Request, res: Response) {
     res.setHeader("Allow", "POST");
     return res.status(405).end("Method Not Allowed");
   }
+  console.log("Received pilot app submission");
 
   try {
     const payload = req.body;

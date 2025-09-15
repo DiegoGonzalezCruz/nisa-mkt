@@ -1,14 +1,16 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, type MouseEvent, type ReactNode } from "react";
+
 interface ButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
   className?: string;
   disabled?: boolean;
 }
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -46,6 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ? ""
         : "shadow-sm hover:shadow-md";
     const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
+
     return (
       <button
         ref={ref}
@@ -59,4 +62,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
+
 Button.displayName = "Button";
