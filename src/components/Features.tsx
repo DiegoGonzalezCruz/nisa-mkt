@@ -23,21 +23,16 @@ export const Features = () => {
     comingSoon: true
   }];
   return <section id="features" className="w-full py-section-mobile md:py-section-desktop bg-white relative overflow-hidden">
-      {/* Enhanced background patterns */}
-      <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50" />
-      {/* Updated gradient blobs with increased saturation */}
-      <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-green-400/20 via-emerald-400/20 to-teal-400/20 rounded-[60%_40%_55%_45%] blur-3xl animate-float" />
-      <div className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-gradient-to-tr from-orange-400/20 via-amber-400/20 to-yellow-400/20 rounded-[45%_55%_50%_50%] blur-3xl animate-float" style={{
-      animationDelay: '2.5s'
-    }} />
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto mb-12 md:mb-20 text-center">
-          <h2 className="text-h2-mobile md:text-h2-desktop font-serif font-normal text-gray-900 mb-4">
-            Nisa is a coach's second brain
-          </h2>
+        <div className="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto mb-12 md:mb-20">
+          <div className="flex items-center gap-0 md:gap-4">
+            <img src="/Nisa_-_Plant_Arc_Growth.png" alt="Plant growth illustration" className="w-full max-w-[150px]" />
+            <h2 className="pt-5 text-h2-mobile md:text-h2-desktop font-serif font-normal text-teal-950 leading-tight">
+              Nisa is a coach's second brain
+            </h2>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl lg:max-w-[80%] mx-auto">
           {features.map((feature, index) => {
           // Array of background colors for cards
           const bgColors = ['bg-orange-100 hover:bg-orange-50', 'bg-amber-100 hover:bg-amber-50', 'bg-red-100 hover:bg-red-50', 'bg-purple-100 hover:bg-purple-50', 'bg-gray-100 hover:bg-gray-50'];

@@ -1,19 +1,31 @@
-import React from 'react';
-import { Header } from '../components/Header';
+import React, { Children } from 'react';
 import { Footer } from '../components/Footer';
 export const Privacy = () => {
-  return <div className="w-full min-h-screen bg-white text-gray-800 font-sans">
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-h1-mobile md:text-h1-desktop font-sans font-semibold text-gray-900 mb-8">
+  return <div className="flex flex-col min-h-screen">
+      <main className="py-16 md:py-24 relative flex-grow overflow-hidden">
+        {/* Background pattern - now using relative positioning */}
+        <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
+        {/* XL Cyan gradient blob */}
+        <div className="absolute -left-[300px] top-[10%] w-[1400px] h-[1400px] bg-gradient-to-tr from-cyan-500/15 via-primary-300/10 to-cyan-200/15 rounded-[50%_50%_45%_55%] blur-3xl -z-10" />
+        {/* Background gradient blobs - contained within main content */}
+        <div className="absolute top-0 right-1/3 w-[900px] h-[900px] bg-gradient-to-br from-cyan-400/10 via-teal-400/10 to-blue-400/10 rounded-[60%_40%_55%_45%] blur-3xl -z-10" />
+        <div className="absolute top-[30%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-purple-400/10 via-violet-400/10 to-fuchsia-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '2s'
+      }} />
+        <div className="absolute top-[60%] right-0 w-[750px] h-[750px] bg-gradient-to-bl from-amber-400/10 via-orange-400/10 to-red-400/10 rounded-[55%_45%_60%_40%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '1.5s'
+      }} />
+        <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-400/10 via-green-400/10 to-teal-400/10 rounded-[45%_55%_50%_50%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '3s'
+      }} />
+        {/* Content container */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-serif font-normal text-cyan-900 mb-6 text-center">
             Privacy Policy
           </h1>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm border border-gray-100">
             <p className="text-gray-500 mb-8">Last Updated: July 2025</p>
-            <h2 className="text-h2-mobile md:text-h2-desktop font-serif font-normal text-gray-900 mb-6">
-              NISA PRIVACY POLICY
-            </h2>
+
             <p className="mb-6 text-gray-700">
               At Teaching Lab Ventures, Inc. ("TLVI", "we", "our", "us"),
               privacy is important to us. This Privacy Policy describes how TLVI
@@ -51,8 +63,8 @@ export const Privacy = () => {
               more information about our Privacy Policy, do not hesitate to
               contact us.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              INFORMATION WE COLLECT
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Information We Collect
             </h3>
             <p className="mb-6 text-gray-700">
               As further described below, we collect personal information
@@ -63,63 +75,71 @@ export const Privacy = () => {
               third party.
             </p>
             <p className="mb-6 text-gray-700">
-              <strong>
+              <span className="font-semibold">
                 Personal Information We Collect Directly From You.
-              </strong>{' '}
+              </span>{' '}
               While the personal information we collect varies depending upon
               your use of the Website, Services, and our interactions with you,
               in general, we collect the following personal information directly
               from you:
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Contact Information.</strong> When you contact us, we
-              collect your name, email address, phone number, and other contact
-              information you choose to provide.
+              <span className="font-semibold">Contact Information.</span> When
+              you contact us, we collect your name, email address, phone number,
+              and other contact information you choose to provide.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Employment Information.</strong> When you contact us, we
-              collect information regarding the school or organization with whom
-              you are associated.
+              <span className="font-semibold">Employment Information.</span>{' '}
+              When you contact us, we collect information regarding the school
+              or organization with whom you are associated.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Account Registration Information.</strong> When you
-              register for an account in the Services, we collect information on
-              you in order to set up such an accountsuch account. This may
-              include your name, email address, phone number, school or
+              <span className="font-semibold">
+                Account Registration Information.
+              </span>{' '}
+              When you register for an account in the Services, we collect
+              information on you in order to set up such an accountsuch account.
+              This may include your name, email address, phone number, school or
               organization name, job title, location information including
               state/province and country, login name and password.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Payment Information (if applicable).</strong> You may be
-              required to provide financial and bank information prior to
-              purchasing the Services. Please note, we do not store financial
-              and bank information; such information is securely processed and
-              stored by our payment processor. For more information regarding
-              the payment processor's privacy practices, please review the
-              policies provided by such provider.
+              <span className="font-semibold">
+                Payment Information (if applicable).
+              </span>{' '}
+              You may be required to provide financial and bank information
+              prior to purchasing the Services. Please note, we do not store
+              financial and bank information; such information is securely
+              processed and stored by our payment processor. For more
+              information regarding the payment processor's privacy practices,
+              please review the policies provided by such provider.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Communications and Interactions.</strong> When you send
-              email, call, or otherwise communicate with us and with members of
-              our team, we collect and maintain a record of your contact
-              details, communications, and our responses.
+              <span className="font-semibold">
+                Communications and Interactions.
+              </span>{' '}
+              When you send email, call, or otherwise communicate with us and
+              with members of our team, we collect and maintain a record of your
+              contact details, communications, and our responses.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Responses and Feedback.</strong> If you participate in our
-              surveys or questionnaires, we collect your responses and feedback,
-              such as user satisfaction or other information related to your use
-              of the Website and Services, and any other information you so
-              choose to provide.
+              <span className="font-semibold">Responses and Feedback.</span> If
+              you participate in our surveys or questionnaires, we collect your
+              responses and feedback, such as user satisfaction or other
+              information related to your use of the Website and Services, and
+              any other information you so choose to provide.
             </p>
             <p className="mb-2 text-gray-700">
-              <strong>Marketing and Promotions.</strong> We collect your email,
-              name, phone number, preferences. If you participate in promotions
-              we offer, we collect your name and other information related to
-              the activities available through the Website and Services.
+              <span className="font-semibold">Marketing and Promotions.</span>{' '}
+              We collect your email, name, phone number, preferences. If you
+              participate in promotions we offer, we collect your name and other
+              information related to the activities available through the
+              Website and Services.
             </p>
             <p className="mb-6 text-gray-700">
-              <strong>Preferences.</strong> We also may collect information
-              about your preferences, including communications preferences.
+              <span className="font-semibold">Preferences.</span> We also may
+              collect information about your preferences, including
+              communications preferences.
             </p>
             <p className="mb-6 text-gray-700">
               The Services are designed to assist education professionals. While
@@ -208,8 +228,8 @@ export const Privacy = () => {
               related messages to you and to other parties on your behalf from
               time to time, as and where permitted by applicable law.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              HOW WE USE YOUR INFORMATION
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              How We Use Your Information
             </h3>
             <p className="mb-6 text-gray-700">
               We use the personal information we collect in various ways,
@@ -288,8 +308,8 @@ export const Privacy = () => {
               <li>Any use with your consent;</li>
               <li>Any other purpose described in this Privacy Policy.</li>
             </ul>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              HOW WE DISCLOSE YOUR INFORMATION
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              How We Disclose Your Information
             </h3>
             <p className="mb-6 text-gray-700">
               Targeted or Personalized advertising (ads based on a user's
@@ -372,8 +392,8 @@ export const Privacy = () => {
               and, if necessary, obtain your consent for any such disclosures
               that are not otherwise described above.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              COOKIES AND OTHER TECHNOLOGIES
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Cookies And Other Technologies
             </h3>
             <p className="mb-6 text-gray-700">
               Like many other websites, we and our third-party providers use
@@ -424,8 +444,8 @@ export const Privacy = () => {
               recognize "Do-Not-Track" requests. You may, however, disable
               certain tracking by disabling cookies.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              THIRD PARTY PRIVACY POLICIES
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Third Party Privacy Policies
             </h3>
             <p className="mb-6 text-gray-700">
               The Website and Services may contain links to third-party sites or
@@ -434,8 +454,8 @@ export const Privacy = () => {
               statements of any other sites or apps that you visit, as we are
               not responsible for the privacy practices of those sites or apps.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              YOUR PRIVACY CHOICES
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Your Privacy Choices
             </h3>
             <p className="mb-6 text-gray-700">
               We make available several ways for you to manage choices about
@@ -463,8 +483,8 @@ export const Privacy = () => {
               emails from us by using the unsubscribe feature in any such email
               we send you.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              CHILDREN'S INFORMATION
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Children's Information
             </h3>
             <p className="mb-6 text-gray-700">
               The Website is not intended for individuals under the age of 18
@@ -475,8 +495,8 @@ export const Privacy = () => {
               us immediately and we will use our best efforts to promptly remove
               such information from our records.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              INTERNATIONAL USERS
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              International Users
             </h3>
             <p className="mb-6 text-gray-700">
               The Website and Services are solely intended for individuals
@@ -489,8 +509,8 @@ export const Privacy = () => {
               laws in the United States may differ from those in your country of
               origin.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              SECURITY
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Security
             </h3>
             <p className="mb-6 text-gray-700">
               Information provided by or made accessible by you to us, including
@@ -505,8 +525,8 @@ export const Privacy = () => {
               to any activity you have undertaken using the Website and
               Services.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              PERSONAL DATA RETENTION
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Personal Data Retention
             </h3>
             <p className="mb-6 text-gray-700">
               We retain your personal information for as long as required to
@@ -514,8 +534,8 @@ export const Privacy = () => {
               longer period is necessary for our legal obligations or to defend
               a legal claim.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              DATA RIGHTS
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Data Rights
             </h3>
             <p className="mb-6 text-gray-700">
               While we are not currently subject to any comprehensive consumer
@@ -538,8 +558,8 @@ export const Privacy = () => {
               and the nature of your relationship with the Website and Services
               before processing your request.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              CONTACT US
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Contact Us
             </h3>
             <p className="mb-12 text-gray-700">
               If you have any questions about this Privacy Policy, please email

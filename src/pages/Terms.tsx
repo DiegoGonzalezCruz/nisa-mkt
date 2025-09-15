@@ -1,17 +1,31 @@
 import React from 'react';
-import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 export const Terms = () => {
-  return <div className="w-full min-h-screen bg-white text-gray-800 font-sans">
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-h1-mobile md:text-h1-desktop font-sans font-semibold text-gray-900 mb-8">
+  return <div className="flex flex-col min-h-screen">
+      <main className="py-section-mobile md:py-section-desktop relative flex-grow overflow-hidden">
+        {/* Background pattern - now using relative positioning */}
+        <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
+        {/* XL Cyan gradient blob */}
+        <div className="absolute right-0 bottom-[10%] w-[1300px] h-[1300px] bg-gradient-to-bl from-cyan-400/15 via-primary-300/10 to-teal-200/15 rounded-[55%_45%_50%_50%] blur-3xl -z-10" />
+        {/* Background gradient blobs - contained within main content */}
+        <div className="absolute top-0 left-1/4 w-[850px] h-[850px] bg-gradient-to-br from-blue-400/10 via-cyan-400/10 to-teal-400/10 rounded-[55%_45%_60%_40%] blur-3xl -z-10" />
+        <div className="absolute top-[25%] right-0 w-[750px] h-[750px] bg-gradient-to-tl from-purple-400/10 via-violet-400/10 to-indigo-400/10 rounded-[40%_60%_45%_55%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '1.5s'
+      }} />
+        <div className="absolute top-[50%] -left-[200px] w-[800px] h-[800px] bg-gradient-to-tr from-amber-400/10 via-orange-400/10 to-yellow-400/10 rounded-[60%_40%_50%_50%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '3s'
+      }} />
+        <div className="absolute bottom-0 right-1/3 w-[700px] h-[700px] bg-gradient-to-bl from-emerald-400/10 via-green-400/10 to-lime-400/10 rounded-[45%_55%_40%_60%] blur-3xl -z-10 animate-float" style={{
+        animationDelay: '2s'
+      }} />
+        {/* Content container */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-serif font-normal text-cyan-900 mb-6 text-center">
             Terms of Service
           </h1>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-sm border border-gray-100">
             <p className="text-gray-500 mb-8">Last Updated: July 2025</p>
-            <h2 className="text-h2-mobile md:text-h2-desktop font-serif font-normal text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-2xl font-serif font-medium text-gray-600">
               Nisa Platform End User License Agreement
             </h2>
             <p className="mb-8 text-gray-700">
@@ -23,8 +37,8 @@ export const Terms = () => {
               Resolution), below. Read this Agreement carefully as it affects
               your legal rights.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              General.
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              General
             </h3>
             <p className="mb-6 text-gray-700">
               This End User License Agreement (this "Agreement") is between you,
@@ -46,8 +60,8 @@ export const Terms = () => {
               THE PLATFORM, YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT
               AGREE TO THESE TERMS, YOU MAY NOT ACCESS OR USE THE PLATFORM.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Scope of Use.
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Scope of Use
             </h3>
             <p className="mb-6 text-gray-700">
               The Platform is made available by us and our subsidiaries and
@@ -62,8 +76,8 @@ export const Terms = () => {
               not for republication, distribution, assignment, sublicense, sale,
               preparation of derivative works, or other use.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Modifications.
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Modifications
             </h3>
             <p className="mb-6 text-gray-700">
               We reserve the right to supplement, change, or otherwise modify
@@ -81,8 +95,8 @@ export const Terms = () => {
               to login to the Platform and review this Agreement periodically
               for updates and changes.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Restrictions on Use.
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Restrictions on Use
             </h3>
             <p className="mb-6 text-gray-700">
               You will not, and will not permit any third party to, do any of
@@ -141,8 +155,8 @@ export const Terms = () => {
                 enjoyment of the Platform.
               </li>
             </ul>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Privacy Policy.
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Privacy Policy
             </h3>
             <p className="mb-6 text-gray-700">
               You may view a copy of our privacy policy linked here ("Privacy
@@ -153,7 +167,7 @@ export const Terms = () => {
               through or in connection with the Platform.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Access & Security.
+              Access & Security
             </h3>
             <p className="mb-6 text-gray-700">
               Access to the Services is provided at our sole discretion. To use
@@ -177,7 +191,7 @@ export const Terms = () => {
               communication lines required to access and use the Services.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Your Content.
+              Your Content
             </h3>
             <p className="mb-6 text-gray-700">
               The Services may allow you to post, submit, or upload content,
@@ -266,7 +280,7 @@ export const Terms = () => {
               rights of any third party.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Intellectual Property.
+              Intellectual Property
             </h3>
             <p className="mb-6 text-gray-700">
               The Platform and Third-Party Platforms (defined below) are
@@ -315,7 +329,7 @@ export const Terms = () => {
               without our express written consent for each specific instance.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Third Party Platforms.
+              Third Party Platforms
             </h3>
             <p className="mb-6 text-gray-700">
               The Platform may link or redirect you to third-party websites or
@@ -347,7 +361,7 @@ export const Terms = () => {
               content or services.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Violation of Rules and Regulations; Disclosure of Information.
+              Violation of Rules and Regulations; Disclosure of Information
             </h3>
             <p className="mb-6 text-gray-700">
               We reserve the right to seek all remedies available at law and in
@@ -365,7 +379,7 @@ export const Terms = () => {
               discretion.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Indemnity.
+              Indemnity
             </h3>
             <p className="mb-6 text-gray-700">
               You agree to indemnify, defend, and hold us and our subsidiaries,
@@ -390,7 +404,7 @@ export const Terms = () => {
               termination of this Agreement.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Limitation of Liability.
+              Limitation of Liability
             </h3>
             <p className="mb-6 text-gray-700">
               YOU UNDERSTAND AND AGREE THAT NEITHER WE NOR OUR VENDORS WILL BE
@@ -439,7 +453,7 @@ export const Terms = () => {
               permitted by applicable law.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              No Warranties.
+              No Warranties
             </h3>
             <p className="mb-6 text-gray-700">
               All information provided through the Platform is subject to
@@ -467,7 +481,7 @@ export const Terms = () => {
               DISCONTINUE USE.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              No Fiduciary Relationship.
+              No Fiduciary Relationship
             </h3>
             <p className="mb-6 text-gray-700">
               Except to the extent set forth in a separate agreement between you
@@ -478,7 +492,7 @@ export const Terms = () => {
               behalf or bind us in any way.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Right to Monitor.
+              Right to Monitor
             </h3>
             <p className="mb-6 text-gray-700">
               We reserve the right to actively monitor your use of the Platform
@@ -491,7 +505,7 @@ export const Terms = () => {
               Platform.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Electronic Communications.
+              Electronic Communications
             </h3>
             <p className="mb-6 text-gray-700">
               You acknowledge and agree that you may send and receive electronic
@@ -511,7 +525,7 @@ export const Terms = () => {
               Policy.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Use Outside of the United States.
+              Use Outside of the United States
             </h3>
             <p className="mb-6 text-gray-700">
               The Platform is operated by us from our offices within the United
@@ -524,7 +538,7 @@ export const Terms = () => {
               local laws.
             </p>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Dispute Resolution.
+              Dispute Resolution
             </h3>
             <p className="mb-6 text-gray-700">
               EACH PARTY AGREES THAT ANY DISPUTE, CLAIM, OR CONTROVERSY ARISING
@@ -649,8 +663,8 @@ export const Terms = () => {
               through an appropriate court proceeding, and all other claims
               subject to arbitration shall remain in arbitration.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Time Limit on Claims Against Us.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Time Limit on Claims Against Us
             </h3>
             <p className="mb-6 text-gray-700">
               You agree that any claim you may have arising out of or related to
@@ -658,8 +672,8 @@ export const Terms = () => {
               filed within one (1) year after the date such claim arose;
               otherwise, your claim is permanently barred.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Governing Law; Venue.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Governing Law; Venue
             </h3>
             <p className="mb-6 text-gray-700">
               New York law and the Federal Arbitration Act govern all disputes
@@ -668,8 +682,8 @@ export const Terms = () => {
               on Contracts for the International Sale of Goods does not apply to
               this Agreement.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Severability and Waiver.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Severability and Waiver
             </h3>
             <p className="mb-6 text-gray-700">
               If any provision of this Agreement will be deemed unlawful, void,
@@ -681,8 +695,8 @@ export const Terms = () => {
               subsequently enforce such provision or any other provisions of
               this Agreement.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Assignment.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Assignment
             </h3>
             <p className="mb-6 text-gray-700">
               We may assign this Agreement or any part of them without
@@ -691,8 +705,8 @@ export const Terms = () => {
               prior written consent and any assignment in violation of this
               prohibition will be null and void.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Our Remedies.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Our Remedies
             </h3>
             <p className="mb-6 text-gray-700">
               You agree that any violation, or threatened violation, by you of
@@ -703,8 +717,8 @@ export const Terms = () => {
               relief that we deem necessary or appropriate. These remedies are
               in addition to any other remedies we may have at law or in equity.
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Contact Us.
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Contact Us
             </h3>
             <p className="mb-6 text-gray-700">
               Contact us via email at info@teachinglabstudio.com or via mail at:

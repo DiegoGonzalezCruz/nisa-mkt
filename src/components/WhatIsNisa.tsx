@@ -1,39 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Sparkles, Users, Brain } from 'lucide-react';
 export const WhatIsNisa = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.pageYOffset;
-      const blobs = document.querySelectorAll('.parallax-blob');
-      blobs.forEach(blob => {
-        const speed = blob.getAttribute('data-speed') || 0.15;
-        const yPos = -(scrolled * speed);
-        blob.style.transform = `translate3d(0, ${yPos}px, 0)`;
-      });
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  return <section id="what-is-nisa" className="w-full bg-primary-500 py-24 md:py-32 relative overflow-hidden">
-      {/* Enhanced background patterns */}
-      <div className="absolute inset-0 bg-grid-gray-900/[0.02] -z-10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-600/40 via-primary-500/30 to-primary-400/20" />
-      {/* Refined gradient blobs */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-1/3 w-[800px] h-[800px] bg-gradient-to-br from-blue-400/30 via-primary-400/30 to-purple-400/30 rounded-full blur-3xl parallax-blob" data-speed="0.2"></div>
-      <div className="absolute bottom-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-tr from-purple-400/15 via-blue-400/15 to-indigo-400/15 rounded-full blur-3xl parallax-blob mix-blend-multiply z-0" data-speed="0.15"></div>
+  return <section id="what-is-nisa" className="w-full bg-primary-500 py-section-mobile md:py-section-desktop relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto mb-12 md:mb-20 text-center">
           <h2 className="relative z-10 text-h2-mobile md:text-h2-desktop font-serif font-normal text-white mb-4 leading-tight">
             Focus on your people,
             <br className="hidden md:block" /> not your paperwork
           </h2>
-
           <p className="text-xl text-white/100 max-w-3xl mx-auto">
             Great coaches are knowledgeable, intentional, and relational. They
             deserve better support to maximize their impact.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 max-w-5xl lg:max-w-[80%] mx-auto">
           {[{
           icon: <img src="/Intelligent_Support.png" alt="" className="w-32 h-32 opacity-80" />,
           title: 'Intelligent Support',

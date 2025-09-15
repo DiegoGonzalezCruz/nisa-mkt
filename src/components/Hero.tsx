@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from './Button';
 import { PlayIcon, Users, Brain, Target, Star, Heart, BookOpenIcon } from 'lucide-react';
 import { useModal } from './ModalContext';
 export const Hero = () => {
   const {
-    openSignupModal
+    openSignupModal,
+    openJoinPilotModal
   } = useModal();
+  const applyButtonRef = useRef<HTMLButtonElement>(null);
+  const stayInLoopButtonRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -15,35 +18,38 @@ export const Hero = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <section className="w-full py-24 md:py-32 overflow-hidden relative bg-gradient-to-br from-white via-primary-50/30 to-blue-50/30">
-      {/* Background blobs */}
-      <div className="absolute -top-40 -right-20 w-[800px] h-[600px] bg-gradient-to-br from-orange-400/20 via-red-400/20 to-yellow-400/20 rounded-[60%_40%_55%_45%] blur-3xl transform rotate-12 animate-float"></div>
-      <div className="absolute -bottom-40 -left-20 w-[600px] h-[800px] bg-gradient-to-tr from-purple-500/20 via-violet-400/20 to-fuchsia-400/20 rounded-[40%_60%_45%_55%] blur-3xl transform -rotate-12 animate-float" style={{
-      animationDelay: '2s'
-    }}></div>
+  const handleOpenSignupModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    openSignupModal();
+  };
+  const handleOpenJoinPilotModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    openJoinPilotModal(centerX, centerY);
+  };
+  return <section className="w-full py-section-mobile md:py-section-desktop overflow-hidden relative bg-gradient-to-br from-white via-primary-50/30 to-blue-50/30">
       {/* Background Icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Pattern overlay with 30% opacity behind gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-blue-50/30" />
-        {/* Background gradient blob */}
-        <div className="absolute -top-40 -right-20 w-[800px] h-[600px] bg-gradient-to-br from-primary-400/30 via-blue-400/30 to-purple-400/30 rounded-[60%_40%_55%_45%] blur-3xl transform rotate-12"></div>
         {/* Icons with adjusted opacity */}
-        <div className="absolute top-20 left-[10%] w-32 h-32 text-white/10 transform -rotate-12">
+        <div className="absolute top-20 left-[10%] w-32 h-32 text-gray-300/10 transform -rotate-12">
           <BookOpenIcon strokeWidth={1} />
         </div>
-        <div className="absolute top-40 right-[15%] w-40 h-40 text-white/10 transform rotate-12">
+        <div className="absolute top-40 right-[15%] w-40 h-40 text-gray-300/10 transform rotate-12">
           <Users strokeWidth={1} />
         </div>
-        <div className="absolute bottom-40 left-[20%] w-36 h-36 text-white/10 transform rotate-45">
+        <div className="absolute bottom-40 left-[20%] w-36 h-36 text-gray-300/10 transform rotate-45">
           <Brain strokeWidth={1} />
         </div>
-        <div className="absolute top-1/3 right-[25%] w-28 h-28 text-white/10">
+        <div className="absolute top-1/3 right-[25%] w-28 h-28 text-gray-300/10">
           <Target strokeWidth={1} />
         </div>
-        <div className="absolute bottom-1/4 right-[10%] w-24 h-24 text-white/10 transform -rotate-12">
+        <div className="absolute bottom-1/4 right-[10%] w-24 h-24 text-gray-300/10 transform -rotate-12">
           <Star strokeWidth={1} />
         </div>
-        <div className="absolute top-2/3 left-[15%] w-32 h-32 text-white/10">
+        <div className="absolute top-2/3 left-[15%] w-32 h-32 text-gray-300/10">
           <Heart strokeWidth={1} />
         </div>
       </div>
@@ -53,7 +59,7 @@ export const Hero = () => {
             <div id="hero-logo" className="mb-8 lg:mb-12">
               <img src="/nisa-capriola-logotype.png" alt="Nisa" className="h-14 md:h-20 w-auto" />
             </div>
-            <h1 className="font-serif font-medium text-display-mobile md:text-display-desktop text-gray-900 mb-6 lg:mb-10 leading-tight">
+            <h1 className="font-serif font-medium text-display-mobile md:text-display-desktop text-teal-950 mb-6 lg:mb-10 leading-tight">
               Coaching simplified.
               <br />
               Impact multiplied.
@@ -67,8 +73,8 @@ export const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <div className="relative group">
-                <Button size="lg" onClick={openSignupModal}>
-                  Save your spot
+                <Button ref={applyButtonRef} size="lg" onClick={handleOpenJoinPilotModal}>
+                  Apply to join the pilot
                 </Button>
                 <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out top-full left-1/2 transform -translate-x-1/2 translate-y-2 mt-1 w-48 bg-gray-500 text-white text-xs rounded-md py-2 px-3 pointer-events-none">
                   Reserve early access to Nisa's pilot tools
@@ -76,7 +82,7 @@ export const Hero = () => {
                 </div>
               </div>
               <div className="relative group">
-                <Button size="lg" variant="secondary" onClick={openSignupModal}>
+                <Button ref={stayInLoopButtonRef} size="lg" variant="secondary" onClick={handleOpenSignupModal}>
                   Stay in the loop
                 </Button>
                 <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out top-full left-1/2 transform -translate-x-1/2 translate-y-2 mt-1 w-48 bg-gray-500 text-white text-xs rounded-md py-2 px-3 pointer-events-none">
@@ -88,7 +94,7 @@ export const Hero = () => {
           </div>
           <div className="lg:col-span-5">
             <div className="relative h-full">
-              <img src="/Nisa_Duo_-_Coach_2B_Teacher.png" alt="Illustration of a coach and teacher having a conversation" className="w-full h-full object-contain" />
+              <img src="/Nisa_Duo.png" alt="Illustration of a coach and teacher having a conversation" className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
